@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento de Incidentes</title>
+    <link rel="stylesheet" type="text/css" href="./static/styles.css">
+</head>
+<body>  <!-- Aqui vai o que é visto pelo usuário -->
+    <header>    <!-- Cabeçalho -->
+        <h1>Registro de incidentes</h1>
+        <hr>
+    </header>
+    <main> <!-- Área principal do conteúdo -->
+        <section id="secao-formulario">
+            <h2>Inserir novo incidente</h2>
+            <form id="formulario-incidente">
+                <select id="ambiente" name="ambiente" required>
+                    <option value="" disabled selected>Ambiente</option>
+                    <option value="Desenvolvimento">Desenvolvimento</option>
+                    <option value="Homologação">Homologação</option>
+                    <option value="Produção">Produção</option>
+                </select>
+                <select id="cluster" name="cluster" required>
+                    <option value="" disabled selected>Cluster</option>
+                    <option value="Analytics">Analytics</option>
+                    <option value="Real Time">Real Time</option>
+                    <option value="Lote">Lote</option>
+                    <option value="Data Vault">Data Vault</option>
+                </select>
+                <select id="servico" name="servico" required>
+                    <option value="" disabled selected>Serviço</option>
+                    <option value="Hive">Hive</option>
+                    <option value="Impala">Impala</option>
+                    <option value="Spark">Spark</option>
+                    <option value="Solr">Solr</option>
+                    <option value="Kafka">Kafka</option>
+                    <option value="Flink">Flink</option>
+                    <option value="HDFS">HDFS</option>
+                    <option value="HBase">HBase</option>
+                    <option value="Ranger">Ranger</option>
+                    <option value="Atlas">Atlas</option>
+                    <option value="Parquet">Parquet</option>
+                    <option value="YARN">YARN</option>
+                </select>
+                <select id="criticidade" name="criticidade" required>
+                    <option value="" disabled selected>Criticidade</option>
+                    <option value="Baixa">Baixa</option>
+                    <option value="Média">Média</option>
+                    <option value="Alta">Alta</option>
+                </select>
+                <input id="data-hora" type="datetime-local" name="data-hora" placeholder="Quando foi detectado" required>
+                <input id="descricao" type="text" name="descricao" placeholder="Descrição do incidente" required>
+                <button type="submit" id="botao-adicionar">Adicionar incidente</button>
+            </form>
+        </section>
+        <section id="historico-incidentes">
+            <h2>Histórico de Incidentes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Ambiente</th>
+                        <th>Cluster</th>
+                        <th>Serviço</th>
+                        <th>Criticidade</th>
+                        <th>Data/Hora</th>
+                        <th>Descrição</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-historico">
+                    <!-- As linhas serão preenchidas dinamicamente pelo JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="./static/scripts.js"></script>
+</body>
+</html>
