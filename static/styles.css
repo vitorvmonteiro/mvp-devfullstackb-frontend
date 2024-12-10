@@ -1,149 +1,171 @@
-/*Estilização do cabeçalho*/
-header h1{
-	text-align: center;
-	font-size: 40px;
-	font-family: Arial, sans-serif;
-	color:	#191970;
+/* Estilização geral da página */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Estilização do subtópico */
+/* Cabeçalho */
+header h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+}
+
+header hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Contêiner principal */
+#container-principal {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Formulário */
+#secao-formulario {
+    flex: 1;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
 #secao-formulario h2 {
     text-align: center;
     font-size: 24px;
-    margin-bottom: 10px;
-}
-/*Estilização da seção*/
-#secao-formulario {
-    padding: 20px; /* Espaçamento interno da seção */
-    background-color: #f9f9f9; /* Cor de fundo leve */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 20px;
+    color: #444;
 }
 
-/*Estilização da seção do formulário*/
 #formulario-incidente {
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
-	max-width: 500px;
-	margin: 0 auto;
-	font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
 }
 
-/* Estilizar os campos select e input */
 #formulario-incidente select,
 #formulario-incidente input[type="text"],
 #formulario-incidente input[type="datetime-local"] {
-    width: 100%; /* Preencher toda a largura disponível */
-    height: 40px; /* Aumentar a altura das caixas */
-    font-size: 16px; /* Aumentar o tamanho do texto */
-    padding: 5px; /* Espaçamento interno */
-    border: 1px solid #ccc; /* Borda cinza clara */
-    border-radius: 5px; /* Borda arredondada */
-    box-sizing: border-box; /* Garante que o padding seja considerado no tamanho total */
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
-/* Estilizar o campo de descrição */
-#formulario-incidente input[name="descricao"] {
-    height: 80px; /* Aumentar a altura */
-    resize: none; /* Impedir redimensionamento manual */
+#formulario-incidente select:focus,
+#formulario-incidente input:focus {
+    border-color: #007BFF;
+    outline: none;
 }
 
-/* Estilizar o botão de adição de incidente */
-#botao-adicionar {
-    background-color: #007BFF; /* Cor de fundo azul */
-    color: white; /* Cor do texto */
-    font-size: 16px; /* Tamanho do texto */
-    padding: 10px 20px; /* Espaçamento interno */
-    border: none; /* Remove a borda padrão */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Altera o cursor para mãozinha */
-    transition: background-color 0.3s ease; /* Animação suave ao passar o mouse */
+#formulario-incidente button {
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
 }
 
-/* Estilo ao passar o mouse no botão */
-#botao-adicionar:hover {
-    background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+#formulario-incidente button:hover {
+    background-color: #0056b3;
 }
 
-/* Estiliza o título da seção de histórico */
+/* Histórico */
+#historico-incidentes {
+    flex: 2;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 #historico-incidentes h2 {
     text-align: center;
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    color: #444;
 }
 
-/* Define o espaço superior para a lista de incidentes */
-#lista-incidentes {
-    margin-top: 30px;
-}
-
-/* Estiliza a tabela de incidentes */
-#lista-incidentes table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    text-align: left;
-}
-
-/* Estiliza as células e cabeçalhos da tabela de incidentes */
-#lista-incidentes th, #lista-incidentes td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-/* Estiliza os cabeçalhos da tabela de incidentes */
-#lista-incidentes th {
-    background-color: #007BFF;
-    color: white;
-}
-
-/* Define o espaço superior para o histórico de incidentes */
-#historico-incidentes {
-    margin-top: 30px;
-}
-
-/* Estiliza a tabela do histórico de incidentes */
 #historico-incidentes table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
     text-align: left;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-/* Estiliza as células e cabeçalhos da tabela do histórico de incidentes */
 #historico-incidentes th, #historico-incidentes td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
 }
 
-/* Estiliza os cabeçalhos da tabela do histórico de incidentes */
 #historico-incidentes th {
     background-color: #007BFF;
-    color: white;
+    color: #fff;
+    font-weight: bold;
 }
 
-/* Define cor alternada para linhas pares da tabela */
 #historico-incidentes tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
 }
 
-/* Define cor de destaque ao passar o mouse sobre as linhas */
 #historico-incidentes tbody tr:hover {
-    background-color: #ddd;
+    background-color: #f1f1f1;
 }
 
-/* Estiliza o botão de tratar no histórico de incidentes */
 #historico-incidentes .btn-tratar {
-    color: white;
-    background-color: #28a745; /* Verde para indicar ação positiva */
+    background-color: #28a745;
+    color: #fff;
     border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding: 8px 12px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 #historico-incidentes .btn-tratar:hover {
-    background-color: #218838; /* Tom mais escuro no hover */
+    background-color: #218838;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #container-principal {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    #secao-formulario, #historico-incidentes {
+        max-width: 100%;
+    }
 }
